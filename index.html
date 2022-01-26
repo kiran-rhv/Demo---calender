@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="Acaemics admission pages and its details list">
+    <link rel="icon" type="image/x-icon" href="assets/images/favicon.png">
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="assets/css/custom.css" />
+    <title>javascript</title>
+</head>
+
+<body>
+    <!-- Navbar Start -->
+    <nav class="navbar navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">
+            <img src="assets/images/logo.png" width="30" height="30" class="img-fluid d-inline-block align-top mx-2"
+                alt="calendar image" />
+            Days in a Month
+        </a>
+    </nav>
+    <!-- Navbar End -->
+
+    <!-- Body Content Start  -->
+    <div class="container my-4">
+        <form>
+            <div class="form-group">
+                <label for="month">Month</label>
+                <input type="number" class="form-control" id="monthInput" placeholder="Enter the month" required
+                    autocomplete="off" />
+            </div>
+            <div class="form-group">
+                <label for="year">Year</label>
+                <input type="number" class="form-control" id="yearInput" placeholder="Enter the year" required
+                    autocomplete="off" />
+            </div>
+            <button class="btn btn-primary mb-2" onclick="checkMonth();" type="button">Submit</button>
+        </form>
+
+        <p id="demo1"></p>
+        <p id="demo2"></p>
+        <p id="demo3"></p>
+        <p id="leap"></p>
+    </div>
+    <!-- Body Content End  -->
+
+    <script src="assets/js/jquery-3.4.1.js"></script>
+    <script src="assets/js/jquery.slim.min.js"></script>
+    <script src="assets/js/popper.min.js"></script>
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/custom.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,169 @@
+/*====================================== reset.css is here ========================================*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
+*:after,
+*:before {
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+fieldset,
+img {
+  border: 0;
+}
+address,
+caption,
+cite,
+code,
+dfn,
+em,
+strong,
+th,
+var {
+  font-style: normal;
+  font-weight: normal;
+}
+ol,
+ul {
+  list-style: none;
+}
+caption,
+th {
+  text-align: center;
+}
+
+q:before,
+q:after {
+  content: "";
+}
+abbr,
+acronym {
+  border: 0;
+}
+.clear {
+  clear: both;
+  font-size: 1px;
+  line-height: 1px;
+  display: block;
+  height: 0;
+}
+.clearfix:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+.last {
+  margin: 0 !important;
+}
+.pad_last {
+  padding: 0 !important;
+}
+.no_bg {
+  background: none !important;
+}
+.no_bor {
+  border: 0 none !important;
+}
+header,
+nav,
+section,
+article,
+aside,
+footer,
+hgroup,
+figure {
+  display: block;
+}
+/**************************************************************************************/
+a {
+  color: #000;
+  text-decoration: none;
+  outline: 0 none !important;
+}
+a:hover,
+a:focus {
+  color: #000;
+  text-decoration: none;
+  outline: 0 none !important;
+}
+h1 {
+  font-size: 50px;
+  line-height: 1.1;
+}
+h2 {
+  font-size: 40px;
+}
+h3 {
+  font-size: 30px;
+}
+h4 {
+  font-size: 20px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 10px;
+}
+/*---------------------------------------------------*/
+/* html {
+
+} */
+
+body {
+  font-weight: 300;
+  color: #333333;
+  font-size: 16px;
+  background-color: #fff;
+  font-family: "Graphik-Regular";
+}
+
+html,
+body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+/*-----------LayOut Start here-----------------------*/
+.wrapper {
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+  padding-top: 120px;
+}
+
+.container {
+  max-width: 1250px;
+  margin: 0 auto;
+}
+
+p {
+  font-size: 18px;
+  color: #666666;
+  line-height: 35px;
+  margin-bottom: 0;
+}
+
+/* -------Don't Remove this---------------*/
+input,
+textarea,
+button,
+select {
+  /*-webkit-appearance:noneSafari/Chrome*/
+  -moz-appearance: none; /*Firefox*/
+  -ms-appearance: none; /*IE*/
+  -o-appearance: none; /*Opera*/
+  appearance: none;
+  /* -webkit-border-radius: 0; */
+}
+
+/* -------custom CSS---------------*/
