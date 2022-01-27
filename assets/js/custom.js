@@ -105,36 +105,46 @@ function incrementValue() {
   }();
   add++;
   if (add >10) {
+    // alert("Increment Limited");
     count_msg = "Increment Limited";
-    document.getElementById('number').value = count_msg;
+    document.getElementById('count_msg').innerHTML = count_msg;
     return;
+  }else {
+    document.getElementById('count_msg').innerHTML = " ";
   }
   document.getElementById('number').value = add;
 }
 
 function decrementValue() {
+  let count_msg = "";
   let subtract = document.getElementById('number').value;
   subtract = function () {
   if (isNaN(subtract)) {
     return 0;
   }
   return subtract;
-}();
+  }();
 
-(function () {
-  if (subtract < 1) {
-    alert("Decrement Limited");
-    return subtract = 1;
-  }
-  return;  
-})();
+  (function () {
+    if (subtract < 1) {
+      // alert("Decrement Limited");
+      count_msg = "Decrement Limited";
+      document.getElementById('count_msg').innerHTML = count_msg;
+      return subtract = 1;
+    }else{
+      document.getElementById('count_msg').innerHTML = " ";
+    }
+    return;  
+  })();
 
-subtract--;
-document.getElementById('number').value = subtract;
+  subtract--;
+  document.getElementById('number').value = subtract;
 }
+  
 
 function reset() {
   document.getElementById('number').value = 0;
+  document.getElementById('count_msg').innerHTML = " ";
 }
 
 /* ------------------ Counter JS code End ------------------ */
