@@ -25,24 +25,27 @@
 
     <!-- Body Content Start  -->
     <div class="container my-4">
-        <form>
+        <form class="needs-validation" novalidate>
             <div class="form-group">
                 <label for="month">Month</label>
-                <input type="number" class="form-control" id="monthInput" placeholder="Enter the month" required
-                    autocomplete="off" />
+                <input type="text" class="form-control" id="monthInput" placeholder="Enter the month" maxlength="2"
+                    autocomplete="off" required />
+                <div class="invalid-feedback">
+                    Please provide a valid Month.
+                </div>
             </div>
             <div class="form-group">
                 <label for="year">Year</label>
-                <input type="number" class="form-control" id="yearInput" placeholder="Enter the year" required
-                    autocomplete="off" />
+                <input type="text" class="form-control" id="yearInput" placeholder="Enter the year" autocomplete="off"
+                    maxlength="4" required />
+                <div class="invalid-feedback">
+                    Please provide a valid Year.
+                </div>
             </div>
-            <button class="btn btn-primary mb-2" onclick="checkMonth();" type="button">Submit</button>
+            <button class="btn btn-primary mb-2" type="submit">Submit</button>
         </form>
 
-        <p id="demo1"></p>
-        <p id="demo2"></p>
-        <p id="demo3"></p>
-        <p id="leap"></p>
+        <div class="my-2" id="output"></div>
     </div>
     <!-- Body Content End  -->
 
