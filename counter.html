@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="Acaemics admission pages and its details list">
+    <link rel="icon" type="image/x-icon" href="assets/images/counter_favicon.png">
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Staatliches&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/custom.css" />
+    <title>javascript</title>
+</head>
+
+<body>
+    <!-- Body Content Start  -->
+    <div class="container my-4">
+        <div class="card text-center border-0 mt-5">
+            <div class="card-header border-0 p-0 text-center h1 card_css">
+                Counter
+            </div>
+            <form class="border-0 p-0 text-center card_number">
+                <input class="border-0 p-0 text-center text-success" type="text" id="number" value="0" readonly />
+            </form>
+            <div class="card-body p-0 text-center d-flex justify-content-center h4">
+                <button type="button" class="btn btn-outline-danger text-uppercase mx-2 btn_css" onclick="
+                decrementValue()" value="Decrement Value">decrease</button>
+                <button type="button" class="btn btn-outline-primary text-uppercase mx-2 btn_css" onclick="
+                reset()" value="Reset Value">reset</button>
+                <button type="button" class="btn btn-outline-success text-uppercase mx-2 btn_css" onclick="
+                    incrementValue()" value="Increment Value">Increase
+                </button>
+            </div>
+        </div>
+        <div id="count_msg"></div>
+        <!-- Body Content End  -->
+
+        <script src=" assets/js/jquery-3.4.1.js"></script>
+        <script src="assets/js/jquery.slim.min.js"></script>
+        <script src="assets/js/popper.min.js"></script>
+        <script src="assets/js/bootstrap.bundle.min.js"></script>
+        <script src="assets/js/custom.js"></script>
+    </div>
+</body>
+
+</html>

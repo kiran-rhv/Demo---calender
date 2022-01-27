@@ -1,3 +1,5 @@
+/* ------------------ Calender JS Code Start ------------------ */
+
 /* ------------------ Form Validation Start ------------------ */
 (function () {
   "use strict";
@@ -89,4 +91,50 @@ function leapyear(checkyear) {
   document.getElementById('output').innerHTML = feb;
 }
 
+/* ------------------ Calender JS Code End ------------------ */
 
+/* ------------------ Counter JS code Start ------------------ */
+function incrementValue() {
+  let count_msg = "";
+  let add = (document.getElementById('number').value);
+  add = function () {
+    if (isNaN(add)) {
+      return 0;
+    }
+    return add;
+  }();
+  add++;
+  if (add >10) {
+    count_msg = "Increment Limited";
+    document.getElementById('number').value = count_msg;
+    return;
+  }
+  document.getElementById('number').value = add;
+}
+
+function decrementValue() {
+  let subtract = document.getElementById('number').value;
+  subtract = function () {
+  if (isNaN(subtract)) {
+    return 0;
+  }
+  return subtract;
+}();
+
+(function () {
+  if (subtract < 1) {
+    alert("Decrement Limited");
+    return subtract = 1;
+  }
+  return;  
+})();
+
+subtract--;
+document.getElementById('number').value = subtract;
+}
+
+function reset() {
+  document.getElementById('number').value = 0;
+}
+
+/* ------------------ Counter JS code End ------------------ */

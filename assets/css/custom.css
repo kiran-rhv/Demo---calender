@@ -167,3 +167,25 @@ select {
 }
 
 /* -------custom CSS---------------*/
+
+
+/* -------Counter CSS Start---------------*/
+.card_css{
+  font-family: 'Staatliches', cursive !important;
+  font-size: 50px;
+  color: #102b42;
+  letter-spacing: 3px;
+}
+
+.card_number {
+  font-size: 85px;
+}
+
+.btn_css {
+  width: 120px;
+}
+
+input:focus {
+  outline: 0;
+}
+/* -------Counter CSS End---------------*/
