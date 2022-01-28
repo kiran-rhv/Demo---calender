@@ -162,7 +162,7 @@ select {
   -moz-appearance: none; /*Firefox*/
   -ms-appearance: none; /*IE*/
   -o-appearance: none; /*Opera*/
-  appearance: none;
+  /* appearance: none; */
   /* -webkit-border-radius: 0; */
 }
 
@@ -200,3 +200,48 @@ input:focus {
   font-size: 25px;
 }
 /* -------Counter CSS End---------------*/
+
+/* -------Restaurant Menu Page Start---------------*/
+
+.menu_css {
+  font-family: 'Staatliches', cursive !important;
+  font-size: 50px;
+  color: #102b42;
+  letter-spacing: 3px;
+  text-decoration: underline 5px solid goldenrod;
+}
+
+.food_check {
+  font-weight: 500;
+  font-family: 'Staatliches', cursive !important;
+  letter-spacing: 2px;
+  color: black;
+}
+
+.food_card {
+  font-family: 'Staatliches', cursive !important;
+  letter-spacing: 2px;
+}
+
+.food_price {
+  color: goldenrod;
+}
+
+.food_description {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: 16px !important;
+  line-height: 26px !important;
+  color: #65a2cf;
+  letter-spacing: 0px;
+  margin: 15px 0px 0px 0px;
+}
+
+.img_card {
+  object-fit: cover;
+  height: 130px;
+  width: 200px;
+  border-radius: 5px;
+  border: 2px solid goldenrod;
+  margin: 20px 0px 0px 0px;
+}
+/* -------Restaurant Menu Page End---------------*/

@@ -148,3 +148,54 @@ function reset() {
 }
 
 /* ------------------ Counter JS code End ------------------ */
+
+
+/* ------------------ Restaurant Menu Page JS code Start ------------------ */
+let menuList = [
+	{
+		"title": "Masal Dose",
+		"description": "Tasty South Indian Breakfast",
+		"image": "../assets/image/dosa.jpeg",
+		"category": "breakfast",
+		"amount": "Rs 60/-"
+	},
+	{
+		"title": "Onion Dose",
+		"description": "Tasty South Indian Breakfast",
+		"image": "../assets/image/oniondosa.jpeg",
+		"category": "breakfast",
+		"amount": "Rs 70/-"
+	},
+	{
+		"title": "Full Meals",
+		"description": "South Indian Meals",
+		"image": "../assets/image/fullmeals.jpeg",
+		"category": "lunch",
+		"amount": "Rs 100/-"
+	},
+	{
+		"title": "Mini Meals",
+		"description": "South Indian Mini Meals",
+		"image": "../assets/image/minimeals.jpeg",
+		"category": "lunch",
+		"amount": "Rs 80/-"
+	},
+  {
+		"title": "Meals",
+		"description": "South Indian Mini Meals",
+		"image": "../assets/image/minimeals.jpeg",
+		"category": "dinner",
+		"amount": "Rs 120/-"
+	},
+  {
+		"title": "Chocolate Milk Shake",
+		"description": "Chocolate Milk Shake",
+		"image": "../assets/image/minimeals.jpeg",
+		"category": "shakes",
+		"amount": "Rs 80/-"
+	},
+];
+
+console.log(menuList);
+
+/* ------------------ Restaurant Menu Page JS code End ------------------ */
