@@ -151,51 +151,142 @@ function reset() {
 
 
 /* ------------------ Restaurant Menu Page JS code Start ------------------ */
-let menuList = [
+let allMenuList = [
 	{
 		"title": "Masal Dose",
-		"description": "Tasty South Indian Breakfast",
-		"image": "../assets/image/dosa.jpeg",
+		"description": "Slightly thick and soft dosas, served with onion and potato filling along with sambar and chutney",
+		"image": "assets/images/restaurant_menu/dosa.jpg",
 		"category": "breakfast",
-		"amount": "Rs 60/-"
+		"amount": 60
 	},
 	{
-		"title": "Onion Dose",
-		"description": "Tasty South Indian Breakfast",
-		"image": "../assets/image/oniondosa.jpeg",
+		"title": "Idli",
+		"description": "Tasty South Indian Breakfast platter that is usually served along with sambar and chutney",
+		"image": "assets/images/restaurant_menu/idli.jpg",
 		"category": "breakfast",
-		"amount": "Rs 70/-"
+		"amount": 40
 	},
 	{
 		"title": "Full Meals",
 		"description": "South Indian Meals",
-		"image": "../assets/image/fullmeals.jpeg",
+		"image": "assets/images/restaurant_menu/full_meals.jpg",
 		"category": "lunch",
-		"amount": "Rs 100/-"
+		"amount": 150
 	},
 	{
 		"title": "Mini Meals",
 		"description": "South Indian Mini Meals",
-		"image": "../assets/image/minimeals.jpeg",
+		"image": "assets/images/restaurant_menu/mini_meals.jpg",
 		"category": "lunch",
-		"amount": "Rs 80/-"
+		"amount": 80
 	},
   {
-		"title": "Meals",
+		"title": "Rice and Sambar",
 		"description": "South Indian Mini Meals",
-		"image": "../assets/image/minimeals.jpeg",
+		"image": "assets/images/restaurant_menu/rice.jpg",
 		"category": "dinner",
-		"amount": "Rs 120/-"
+		"amount": 100
 	},
   {
 		"title": "Chocolate Milk Shake",
 		"description": "Chocolate Milk Shake",
-		"image": "../assets/image/minimeals.jpeg",
+		"image": "assets/images/restaurant_menu/milkshake.jpg",
 		"category": "shakes",
-		"amount": "Rs 80/-"
-	},
+		"amount": 80
+	}
 ];
 
-console.log(menuList);
+// console.log(allMenuList);
+
+let printMenuList = [];
+let filterCategory = ["all"];
+
+if (filterCategory.includes("all")) {
+  printMenuList = allMenuList;
+} else {  
+  /* Using FOR LOOP
+  
+  for (let i = 0; i < allMenuList.length; i++){
+    let menuItem = allMenuList[i];
+    if(filterCategory.includes(menuItem.category)) {
+      printMenuList.push(menuItem);
+    }
+  }*/
+
+  // Using MAP Function
+
+  // printMenuList = allMenuList.map(getAllMenu); This gets all the values
+  printMenuList = allMenuList.map(getAllMenu).filter(menuFilter);
+}
+
+function getAllMenu(menuItem) {
+  return menuItem;
+}
+
+function menuFilter(menuItem) {
+  if (filterCategory.includes(menuItem.category)) {
+    return menuItem;
+  }
+}
+
+// Creating HTML Menu card
+generatemenu(printMenuList);
+
+function generatemenu(printMenuList) {
+  let htmlData = "";
+  for (i = 0; i<printMenuList.length; i++) {
+    let menuItem = printMenuList[i];
+    let result = i % 2 == 0 ? "even" : "odd";
+    if (result === "even") {
+      htmlData = htmlData + 
+      ` <div class="row">
+          <div class="col-md-6">
+            <div class="card border-0 mb-3" style="max-width: 540px;">
+              <div class="row no-gutters">
+                <div class="col-md-4">
+                  <img src="${menuItem.image}" class="img-fluid img_card"
+                      alt="food images" width="200" height="200" />
+                </div>
+                <div class="col-md-8">
+                  <div class="card-body">
+                    <div class="card-title d-flex justify-content-between h5 border-bottom border-primary card_title_css">
+                      <div class="food_title">${menuItem.title}</div>
+                      <div class="food_price"> ₹ ${menuItem.amount} /-</div>
+                    </div>
+                    <div class="food_category">category : ${menuItem.category}</div>
+                    <p class="card-text text-justify food_description">${menuItem.description}</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>`;
+    } else {
+      htmlData = htmlData + 
+      ` <div class="col-md-6">
+          <div class="card border-0 mb-3" style="max-width: 540px;">
+            <div class="row no-gutters">
+              <div class="col-md-4">
+                <img src="${menuItem.image}" class="img-fluid img_card"
+                    alt="food images" width="200" height="200" />
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                  <div class="card-title d-flex justify-content-between h5 border-bottom border-primary card_title_css">
+                    <div class="food_title">${menuItem.title}</div>
+                    <div class="food_price"> ₹ ${menuItem.amount} /-</div>
+                  </div>
+                  <div class="food_category">category : ${menuItem.category}</div>
+                  <p class="card-text text-justify food_description">${menuItem.description}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>`;
+    }
+  }
+  document.getElementById("menu").innerHTML = htmlData;
+}
+
 
 /* ------------------ Restaurant Menu Page JS code End ------------------ */
