@@ -153,8 +153,8 @@ function reset() {
 /* ------------------ Restaurant Menu Page JS code Start ------------------ */
 let allMenuList = [
 	{
-		"title": "Masal Dose",
-		"description": "Slightly thick and soft dosas, served with onion and potato filling along with sambar and chutney",
+		"title": "Masal Dosa",
+		"description": "Slightly thick and soft dosa's, served with onion and potato filling along with sambar and chutney",
 		"image": "assets/images/restaurant_menu/dosa.jpg",
 		"category": "breakfast",
 		"amount": 60
@@ -288,5 +288,16 @@ function generatemenu(printMenuList) {
   document.getElementById("menu").innerHTML = htmlData;
 }
 
+// selecting ID on click and unselecting ID on click
+
+function checkList(event) {
+  let arry = [];
+  if( event.target.checked) {    
+    arry.push(event.target.id);
+  }else if (event.target.checked === false) {
+arry.pop(event.target.id);
+  }
+  console.log("arry",arry);
+}
 
 /* ------------------ Restaurant Menu Page JS code End ------------------ */
