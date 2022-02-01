@@ -208,7 +208,7 @@ generatemenu(printMenuList);
 function generatemenu(printMenuList) {
   for (let i = 0; i<printMenuList.length; i++) {
     document.getElementById('menu').innerHTML = printMenuList.map(menuItem => 
-      ` <div class="card border-0 mb-3" style="max-width: 540px;">
+      ` <div class="col-md-6 card border-0 mb-3" style="max-width: 540px;">
           <div class="row no-gutters">
             <div class="col-md-4">
               <img src="${menuItem.image}" class="img-fluid img_card"
