@@ -199,42 +199,15 @@ let allMenuList = [
 // console.log(allMenuList);
 
 let printMenuList = [];
-let filterCategory = ["all"];
+let filterCategory = [];
 
-if (filterCategory.includes("all")) {
-  printMenuList = allMenuList;
-} else {  
-  /* Using FOR LOOP
-  
-  for (let i = 0; i < allMenuList.length; i++){
-    let menuItem = allMenuList[i];
-    if(filterCategory.includes(menuItem.category)) {
-      printMenuList.push(menuItem);
-    }
-  }*/
-
-  // Using MAP Function
-
-  // printMenuList = allMenuList.map(getAllMenu); This gets all the values
-  printMenuList = allMenuList.map(getAllMenu).filter(menuFilter);
-}
-
-function getAllMenu(menuItem) {
-  return menuItem;
-}
-
-function menuFilter(menuItem) {
-  if (filterCategory.includes(menuItem.category)) {
-    return menuItem;
-  }
-}
-
+printMenuList = allMenuList;
 // Creating HTML Menu card
 generatemenu(printMenuList);
 
 function generatemenu(printMenuList) {
   let htmlData = "";
-  for (i = 0; i<printMenuList.length; i++) {
+  for (let i = 0; i<printMenuList.length; i++) {
     let menuItem = printMenuList[i];
     let result = i % 2 == 0 ? "even" : "odd";
     if (result === "even") {
@@ -253,7 +226,7 @@ function generatemenu(printMenuList) {
                       <div class="food_title">${menuItem.title}</div>
                       <div class="food_price"> ₹ ${menuItem.amount} /-</div>
                     </div>
-                    <div class="food_category">category : ${menuItem.category}</div>
+                    <div class="food_category">${menuItem.category}</div>
                     <p class="card-text text-justify food_description">${menuItem.description}</p>
                   </div>
                 </div>
@@ -275,7 +248,7 @@ function generatemenu(printMenuList) {
                     <div class="food_title">${menuItem.title}</div>
                     <div class="food_price"> ₹ ${menuItem.amount} /-</div>
                   </div>
-                  <div class="food_category">category : ${menuItem.category}</div>
+                  <div class="food_category">${menuItem.category}</div>
                   <p class="card-text text-justify food_description">${menuItem.description}</p>
                 </div>
               </div>
@@ -283,7 +256,8 @@ function generatemenu(printMenuList) {
           </div>
         </div>
       </div>`;
-    }
+    };
+    // }
   }
   document.getElementById("menu").innerHTML = htmlData;
 }
@@ -291,13 +265,49 @@ function generatemenu(printMenuList) {
 // selecting ID on click and unselecting ID on click
 
 function checkList(event) {
-  let arry = [];
-  if( event.target.checked) {    
-    arry.push(event.target.id);
-  }else if (event.target.checked === false) {
-arry.pop(event.target.id);
+  printMenuList = [];
+
+  // Getting checkbox values 
+  if (event.target.checked === true) {
+    filterCategory.push(event.target.value);
+  } else if (event.target.checked === false) {
+    filterCategory.pop(event.target.value);
   }
-  console.log("arry",arry);
+
+  if (filterCategory.length === 0) {
+    printMenuList = allMenuList;
+  } else {
+    printMenuList = allMenuList.map(getAllMenu).filter(menuFilter);
+  }
+  generatemenu(printMenuList);
+}
+
+function getAllMenu(menuItem) {
+  return menuItem;
+}
+
+function menuFilter(menuItem) {
+  if (filterCategory.includes(menuItem.category)) {
+    return menuItem;
+  }
 }
 
 /* ------------------ Restaurant Menu Page JS code End ------------------ */
+
+// $(document).ready(function(){
+//   $(".check_tick").click(function(){
+//   let value = $(this).attr('id');
+  
+//   if (value == "all"){
+//     $('.filter').show('1000');
+//   } else {
+//     $(".filter").not('.'+value).hide('3000');
+//     $('.filter').filter('.'+value).show('3000');
+//   }
+// });
+  
+// if ($(".check_tick").removeClass("active")) {
+//   $(this).removeClass("active");
+// }
+//   $(this).addClass("active");
+// });
