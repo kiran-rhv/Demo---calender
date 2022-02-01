@@ -22,7 +22,7 @@
         <div class="d-flex justify-content-center my-5 food_check">
             <div class="form-check form-check-inline px-3">
                 <input class="form-check-input mr-2 check_tick" type="checkbox" id="all" value="all" name="all"
-                    onclick="checkList(event);" checked disabled />
+                    onclick="checkList(event);" />
                 <label class="form-check-label text-uppercase" for="all_food">All</label>
             </div>
             <div class="form-check form-check-inline px-3">
@@ -46,7 +46,12 @@
                 <label class="form-check-label text-uppercase" for="shakes">shakes</label>
             </div>
         </div>
-        <div class="food_card" id=menu></div>
+        <div class="food_card">
+            <div class="row">
+                <div class="col-md-6" id="menu">
+                </div>
+            </div>
+        </div>
 
         <script src="assets/js/jquery-3.4.1.js"></script>
         <script src="assets/js/jquery.slim.min.js"></script>

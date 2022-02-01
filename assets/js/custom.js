@@ -206,74 +206,39 @@ printMenuList = allMenuList;
 generatemenu(printMenuList);
 
 function generatemenu(printMenuList) {
-  let htmlData = "";
   for (let i = 0; i<printMenuList.length; i++) {
-    let menuItem = printMenuList[i];
-    let result = i % 2 == 0 ? "even" : "odd";
-    if (result === "even") {
-      htmlData = htmlData + 
-      ` <div class="row">
-          <div class="col-md-6">
-            <div class="card border-0 mb-3" style="max-width: 540px;">
-              <div class="row no-gutters">
-                <div class="col-md-4">
-                  <img src="${menuItem.image}" class="img-fluid img_card"
-                      alt="food images" width="200" height="200" />
-                </div>
-                <div class="col-md-8">
-                  <div class="card-body">
-                    <div class="card-title d-flex justify-content-between h5 border-bottom border-primary card_title_css">
-                      <div class="food_title">${menuItem.title}</div>
-                      <div class="food_price"> ₹ ${menuItem.amount} /-</div>
-                    </div>
-                    <div class="food_category">${menuItem.category}</div>
-                    <p class="card-text text-justify food_description">${menuItem.description}</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>`;
-    } else {
-      htmlData = htmlData + 
-      ` <div class="col-md-6">
-          <div class="card border-0 mb-3" style="max-width: 540px;">
-            <div class="row no-gutters">
-              <div class="col-md-4">
-                <img src="${menuItem.image}" class="img-fluid img_card"
+    document.getElementById('menu').innerHTML = printMenuList.map(menuItem => 
+      ` <div class="card border-0 mb-3" style="max-width: 540px;">
+          <div class="row no-gutters">
+            <div class="col-md-4">
+              <img src="${menuItem.image}" class="img-fluid img_card"
                     alt="food images" width="200" height="200" />
-              </div>
-              <div class="col-md-8">
-                <div class="card-body">
-                  <div class="card-title d-flex justify-content-between h5 border-bottom border-primary card_title_css">
-                    <div class="food_title">${menuItem.title}</div>
-                    <div class="food_price"> ₹ ${menuItem.amount} /-</div>
-                  </div>
-                  <div class="food_category">${menuItem.category}</div>
-                  <p class="card-text text-justify food_description">${menuItem.description}</p>
+            </div>
+            <div class="col-md-8">
+              <div class="card-body">
+                <div class="card-title d-flex justify-content-between h5 border-bottom border-primary card_title_css">
+                  <div class="food_title">${menuItem.title}</div>
+                  <div class="food_price"> ₹ ${menuItem.amount} /-</div>
                 </div>
+                <div class="food_category">${menuItem.category}</div>
+                <p class="card-text text-justify food_description">${menuItem.description}</p>
               </div>
             </div>
           </div>
-        </div>
-      </div>`;
-    };
-    // }
+        </div>`).join ('')
   }
-  document.getElementById("menu").innerHTML = htmlData;
 }
 
 // selecting ID on click and unselecting ID on click
 
 function checkList(event) {
   printMenuList = [];
-
   // Getting checkbox values 
   if (event.target.checked === true) {
     filterCategory.push(event.target.value);
   } else if (event.target.checked === false) {
     filterCategory.pop(event.target.value);
   }
-
   if (filterCategory.length === 0) {
     printMenuList = allMenuList;
   } else {
@@ -293,21 +258,3 @@ function menuFilter(menuItem) {
 }
 
 /* ------------------ Restaurant Menu Page JS code End ------------------ */
-
-// $(document).ready(function(){
-//   $(".check_tick").click(function(){
-//   let value = $(this).attr('id');
-  
-//   if (value == "all"){
-//     $('.filter').show('1000');
-//   } else {
-//     $(".filter").not('.'+value).hide('3000');
-//     $('.filter').filter('.'+value).show('3000');
-//   }
-// });
-  
-// if ($(".check_tick").removeClass("active")) {
-//   $(this).removeClass("active");
-// }
-//   $(this).addClass("active");
-// });
