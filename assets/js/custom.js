@@ -1,8 +1,8 @@
 /* ------------------ Calender JS Code Start ------------------ */
-
+"use strict";
 /* ------------------ Form Validation Start ------------------ */
 (function () {
-  "use strict";
+  // "use strict";
   window.addEventListener(
     "load",
     function () {
@@ -237,7 +237,10 @@ function checkList(event) {
   if (event.target.checked === true) {
     filterCategory.push(event.target.value);
   } else if (event.target.checked === false) {
-    filterCategory.pop(event.target.value);
+    let indexValue = filterCategory.indexOf(event.target.value);
+    if(indexValue > -1){
+      filterCategory.splice(indexValue, 1);
+    }
   }
   if (filterCategory.length === 0) {
     printMenuList = allMenuList;
